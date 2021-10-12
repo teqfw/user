@@ -1,3 +1,3 @@
-# @teqfw/plugin
+# @teqfw/user
 
-Template repository to create repos for Tequila plugins.
+Basic functionality for user handling: RDB registry, etc.

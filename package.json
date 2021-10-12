@@ -1,31 +1,33 @@
 {
-  "name": "@teqfw/plugin",
+  "name": "@teqfw/user",
   "version": "0.1.0",
-  "description": "TeqFW: plugin description.",
+  "description": "TeqFW: user related basic functionality.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/teqfw/plugin.git"
+    "url": "git+https://github.com/teqfw/user.git"
   },
   "keywords": [
     "ecmascript 2015",
+    "entity registry",
     "es6+",
     "pwa",
     "spa",
     "teqfw",
     "tequila framework",
+    "user",
     "web applications",
     "web-apps"
   ],
   "author": "Alex Gusev <alex@flancer64.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/teqfw/plugin/issues"
+    "url": "https://github.com/teqfw/user/issues"
   },
-  "homepage": "https://github.com/teqfw/plugin#readme",
+  "homepage": "https://github.com/teqfw/user#readme",
   "dependencies": {
-    "@teqfw/core-app": "*"
+    "@teqfw/db": "*"
   }
 }

@@ -1,7 +1,7 @@
 {
   "@teqfw/di": {
     "autoload": {
-      "ns": "TeqFw_Plugin",
+      "ns": "TeqFw_User",
       "path": "./src"
     }
   }
