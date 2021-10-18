@@ -29,5 +29,10 @@
   "homepage": "https://github.com/teqfw/user#readme",
   "dependencies": {
     "@teqfw/db": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "mysql2": "*",
+    "pg": "*"
   }
 }
