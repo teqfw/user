@@ -23,8 +23,9 @@ TeqFw_User_Back_Store_RDb_Schema_User.ENTITY = 'user';
 
 /**
  * @memberOf TeqFw_User_Back_Store_RDb_Schema_User
+ * @implements TeqFw_Db_Back_RDb_Meta_IEntity
  */
-class Meta {
+export class Meta {
 
     constructor(spec) {
         /** @type {TeqFw_User_Back_Defaults} */
@@ -34,7 +35,11 @@ class Meta {
         }
 
         this.getAttributes = function () {
-            return ATTR;
+            return Object.keys(ATTR);
+        }
+
+        this.getPrimaryKey = function () {
+            return [ATTR.ID];
         }
     }
 

@@ -49,7 +49,7 @@ const container = (function (cfg) {
     const pathNode = join(cfg.path.root, 'node_modules');
     const srcTeqFwDi = join(pathNode, '@teqfw/di/src');
     const srcTeqFwCore = join(pathNode, '@teqfw/core/src');
-    const srcTeqFwDb = join(pathNode, '@teqfw/core/db');
+    const srcTeqFwDb = join(pathNode, '@teqfw/db/src');
     // add backend sources to map
     res.addSourceMapping('TeqFw_User', cfg.path.src, true, 'mjs');
     res.addSourceMapping('TeqFw_Db', srcTeqFwDb, true, 'mjs');
