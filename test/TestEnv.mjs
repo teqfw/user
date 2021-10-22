@@ -3,7 +3,6 @@
  * @namespace TestEnv
  */
 import {dirname, join} from 'path';
-import {parse} from 'url';
 import Container from '@teqfw/di';
 
 /**
@@ -25,7 +24,8 @@ import Container from '@teqfw/di';
  */
 const cfg = (function () {
     /* Resolve paths to main folders */
-    const {path: currentScript} = parse(import.meta.url);
+    const url = new URL(import.meta.url);
+    const currentScript = url.pathname;
     const pathScript = dirname(currentScript);
     const pathPrj = join(pathScript, '..');
     const pathTest = join(pathPrj, 'test');
