@@ -47,6 +47,12 @@ export default class TeqFw_User_Back_Store_RDb_Schema_User {
             Dto
         );
     }
+
+    /**
+     * @param [data]
+     * @return {TeqFw_User_Back_Store_RDb_Schema_User.Dto}
+     */
+    createDto(data) {}
 }
 
 // finalize code components for this es6-module
