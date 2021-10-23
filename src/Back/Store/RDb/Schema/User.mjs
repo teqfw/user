@@ -18,46 +18,36 @@ const ATTR = {
     DATE_CREATED: 'date_created',
     ID: 'id'
 };
-const ATTRIBUTES = Object.values(ATTR);
 
 // MODULE'S CLASSES
 /**
  * @memberOf TeqFw_User_Back_Store_RDb_Schema_User
  */
 class Dto {
+    static name = `${NS}.Dto`;
     date_created;
     id;
 }
 
+// noinspection JSClosureCompilerSyntax
 /**
- * @memberOf TeqFw_User_Back_Store_RDb_Schema_User
  * @implements TeqFw_Db_Back_RDb_Meta_IEntity
  */
-class Meta {
-
+export default class TeqFw_User_Back_Store_RDb_Schema_User {
     constructor(spec) {
-        /** @type {TeqFw_User_Back_Defaults} */
-        const DEF = spec['TeqFw_User_Back_Defaults$'];
+        /** @type {TeqFw_Web_Push_Back_Defaults} */
+        const DEF = spec['TeqFw_Web_Push_Back_Defaults$'];
+        /** @type {TeqFw_Db_Back_RDb_Schema_EntityBase} */
+        const base = spec['TeqFw_Db_Back_RDb_Schema_EntityBase$'];
 
-        this.createDto = (data) => {
-            const res = new Dto();
-            for (const attr of Object.keys(data))
-                if (ATTRIBUTES.includes(attr)) res[attr] = data[attr];
-            return res;
-        }
-
-        this.getEntityName = () => `${DEF.SHARED.NAME}${ENTITY}`;
-
-        this.getAttributes = () => Object.values(ATTR);
-
-        this.getPrimaryKey = () => [ATTR.ID];
-
-        this.ATTR = ATTR;
+        return base.create(this,
+            `${DEF.SHARED.NAME}${ENTITY}`,
+            ATTR,
+            [ATTR.ID],
+            Dto
+        );
     }
-
 }
 
 // finalize code components for this es6-module
-Object.defineProperty(Dto, 'name', {value: `${NS}.${Dto.name}`});
 Object.freeze(ATTR);
-export {Dto, Meta};
