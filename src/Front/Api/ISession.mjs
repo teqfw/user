@@ -11,9 +11,26 @@ export default class TeqFw_User_Front_Api_ISession {
 
     async close(opts) {}
 
+    /**
+     * Clear current user data from front storages.
+     */
+    async deleteUser() {}
+
     getUser() {}
 
-    async open(opts) {}
+    /**
+     * Open session for the user and redirect to sign in route if user is not registered yet.
+     * @param router Vue Router
+     * @return {Promise<void>}
+     */
+    async open(router) {}
+
+    /**
+     * Close current session and reopen it (refresh user data from IDB).
+     * @param {string|null} route if set than user will be redirected to this route
+     * @return {Promise<void>}
+     */
+    async reopen(route = null) {}
 
     setRouteToRedirect(route) {}
 
