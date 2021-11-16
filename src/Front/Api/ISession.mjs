@@ -17,6 +17,8 @@ export default class TeqFw_User_Front_Api_ISession {
 
     getUser() {}
 
+    getUserId() {}
+
     /**
      * Open session for the user and redirect to sign in route if user is not registered yet.
      * @return {Promise<void>}
