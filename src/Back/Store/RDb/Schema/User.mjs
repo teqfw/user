@@ -24,7 +24,7 @@ const ATTR = {
  * @memberOf TeqFw_User_Back_Store_RDb_Schema_User
  */
 class Dto {
-    static name = `${NS}.Dto`;
+    static namespace = `${NS}.Dto`;
     date_created;
     id;
 }
