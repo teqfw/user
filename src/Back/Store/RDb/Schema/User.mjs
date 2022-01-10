@@ -16,7 +16,9 @@ const ENTITY = '/user';
  */
 const ATTR = {
     DATE_CREATED: 'date_created',
-    ID: 'id'
+    ID: 'id',
+    KEY_PUB: 'key_pub',
+    USERNAME: 'username',
 };
 
 // MODULE'S CLASSES
@@ -25,8 +27,14 @@ const ATTR = {
  */
 class Dto {
     static namespace = `${NS}.Dto`;
+    /** @type {Date} */
     date_created;
+    /** @type {number} */
     id;
+    /** @type {string} */
+    key_pub;
+    /** @type {string} */
+    username;
 }
 
 // noinspection JSClosureCompilerSyntax
@@ -49,6 +57,7 @@ export default class TeqFw_User_Back_Store_RDb_Schema_User {
     }
 
     /**
+     * For JSDoc declarations only.
      * @param [data]
      * @return {TeqFw_User_Back_Store_RDb_Schema_User.Dto}
      */
