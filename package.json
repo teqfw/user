@@ -36,6 +36,7 @@
     "@teqfw/core": "github:teqfw/core",
     "@teqfw/db": "github:teqfw/db",
     "@teqfw/di": "github:teqfw/di",
+    "@teqfw/test": "github:teqfw/test",
     "@teqfw/web": "github:teqfw/web",
     "mocha": "*",
     "mysql2": "*",

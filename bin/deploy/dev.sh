@@ -39,6 +39,9 @@ mkdir -p "${DIR_OWN}/@teqfw/"
 
 processRepo "teqfw/core"
 processRepo "teqfw/db"
+processRepo "teqfw/di"
+processRepo "teqfw/test"
+processRepo "teqfw/web"
 
 echo ""
 echo "App deployment in 'dev' mode is done."

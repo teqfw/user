@@ -1,6 +1,7 @@
 /**
  * Initialize test environment to run unit or modules tests.
  * @namespace TestEnv
+ * @deprecated use @teqfw/test
  */
 import {dirname, join} from 'path';
 import {existsSync} from 'fs';
