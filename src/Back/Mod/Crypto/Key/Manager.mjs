@@ -13,21 +13,19 @@ export default class TeqFw_User_Back_Mod_Crypto_Key_Manager {
 
     constructor(spec) {
         // EXTRACT DEPS
-        /** @type {TeqFw_User_Back_Defaults} */
-        const DEF = spec['TeqFw_User_Back_Defaults$'];
+        /** @type {TeqFw_User_Shared_Dto_AsymKeys} */
+        const dtoKeys = spec['TeqFw_User_Shared_Dto_AsymKeys$'];
 
         this.generateAsyncKeys = async function () {
+            const res = dtoKeys.createDto();
             const keysBuf = nacl.box.keyPair();
-            const secretKey = util.encodeBase64(keysBuf.secretKey);
-            const publicKey = util.encodeBase64(keysBuf.publicKey);
-            return {secretKey, publicKey};
+            res.secret = util.encodeBase64(keysBuf.secretKey);
+            res.public = util.encodeBase64(keysBuf.publicKey);
+            return res;
         }
-        /**
-         * Generate key for synchronous encryption.
-         * @return {Promise<string>} base64 encoded key.
-         */
+
         this.generateSecretKey = async function () {
-            throw  new Error('Is not implemented yet.');
+            return util.encodeBase64(nacl.randomBytes(nacl.secretbox.keyLength));
         }
     }
 }

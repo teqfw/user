@@ -4,12 +4,6 @@
  * There are different cryptographic libraries and algorithms, so this interface defines
  * base principles for crypto keys usage in the app (both for back & front).
  *
- * @namespace TeqFw_User_Shared_Api_Crypto_Key_IManager
- */
-
-/**
- * Interface for cryptographic keys manager.
- *
  * @interface
  */
 export default class TeqFw_User_Shared_Api_Crypto_Key_IManager {
@@ -17,21 +11,13 @@ export default class TeqFw_User_Shared_Api_Crypto_Key_IManager {
     /**
      * Generate keys pair for asynchronous encryption.
      * Both keys in result  are base64 encoded strings.
-     * @return {Promise<{secretKey: string, publicKey: string}>}
+     * @return {Promise<TeqFw_User_Shared_Dto_AsymKeys.Dto>}
      */
-    async generateAsyncKeys() {
-        return {
-            secretKey: '',
-            publicKey: ''
-        };
-    }
+    async generateAsyncKeys() {}
 
     /**
      * Generate key for synchronous encryption.
      * @return {Promise<string>} base64 encoded key.
      */
-    async generateSecretKey() {
-        return '';
-    }
-
+    async generateSecretKey() { }
 }

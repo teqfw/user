@@ -15,7 +15,7 @@
     "replace": {
       "TeqFw_User_Shared_Api_Crypto_Key_IManager": {
         "back": "TeqFw_User_Back_Mod_Crypto_Key_Manager",
-        "front": "TeqFw_User_Front_Model_Crypto_Key_Manager"
+        "front": "TeqFw_User_Front_Mod_Crypto_Key_Manager"
       }
     }
   },

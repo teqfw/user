@@ -11,14 +11,17 @@ export default class TeqFw_User_Front_Mod_Crypto_Key_Manager {
         // EXTRACT DEPS
         const {box, secretbox, randomBytes} = spec['TeqFw_User_Front_Lib_Nacl'];
         const {decodeBase64, encodeBase64} = spec['TeqFw_User_Front_Lib_Nacl_Util'];
+        /** @type {TeqFw_User_Shared_Dto_AsymKeys} */
+        const dtoKeys = spec['TeqFw_User_Shared_Dto_AsymKeys$'];
 
         // DEFINE INSTANCE METHODS
 
         this.generateAsyncKeys = async function () {
+            const res = dtoKeys.createDto();
             const keysBuf = box.keyPair();
-            const secretKey = encodeBase64(keysBuf.secretKey);
-            const publicKey = encodeBase64(keysBuf.publicKey);
-            return {secretKey, publicKey};
+            res.secret = encodeBase64(keysBuf.secretKey);
+            res.public = encodeBase64(keysBuf.publicKey);
+            return res;
         }
 
         this.generateSecretKey = async function () {

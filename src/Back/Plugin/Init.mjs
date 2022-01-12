@@ -16,9 +16,6 @@ export default function Factory(spec) {
         // run initialization synchronously to prevent doubling of singletons
         await container.get('TeqFw_User_Back_Proc_Authenticate$');
         await container.get('TeqFw_User_Back_Proc_Server_Key_Source$');
-        /** @type {TeqFw_User_Back_Act_User_Create.act|function} */
-        const act = await container.get('TeqFw_User_Back_Act_User_Create$');
-        debugger
     }
 
     // MAIN
