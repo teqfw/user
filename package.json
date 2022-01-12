@@ -28,9 +28,15 @@
   },
   "homepage": "https://github.com/teqfw/user#readme",
   "dependencies": {
-    "@teqfw/db": "*"
+    "@teqfw/db": "*",
+    "tweetnacl": "*",
+    "tweetnacl-util": "*"
   },
   "devDependencies": {
+    "@teqfw/core": "github:teqfw/core",
+    "@teqfw/db": "github:teqfw/db",
+    "@teqfw/di": "github:teqfw/di",
+    "@teqfw/web": "github:teqfw/web",
     "mocha": "*",
     "mysql2": "*",
     "pg": "*"

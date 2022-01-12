@@ -1,7 +1,7 @@
 {
   "entity": {
     "user": {
-      "comment": "Registry to user related data.",
+      "comment": "Registry to save public keys of users.",
       "attr": {
         "id": {"type": "id"},
         "date_created": {
@@ -12,14 +12,7 @@
         "key_pub": {
           "comment": "Public key for encryption and authentication.",
           "type": "text"
-        },
-        "username": {
-          "comment": "Unique name to identify user by humans (low case).",
-          "type": "string"
         }
-      },
-      "index": {
-        "uq_username": {"type": "unique", "attrs": ["username"]}
       }
     }
   }

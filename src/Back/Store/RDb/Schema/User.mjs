@@ -18,7 +18,6 @@ const ATTR = {
     DATE_CREATED: 'date_created',
     ID: 'id',
     KEY_PUB: 'key_pub',
-    USERNAME: 'username',
 };
 
 // MODULE'S CLASSES
@@ -33,8 +32,6 @@ class Dto {
     id;
     /** @type {string} */
     key_pub;
-    /** @type {string} */
-    username;
 }
 
 // noinspection JSClosureCompilerSyntax
@@ -43,8 +40,8 @@ class Dto {
  */
 export default class TeqFw_User_Back_Store_RDb_Schema_User {
     constructor(spec) {
-        /** @type {TeqFw_Web_Push_Back_Defaults} */
-        const DEF = spec['TeqFw_Web_Push_Back_Defaults$'];
+        /** @type {TeqFw_User_Back_Defaults} */
+        const DEF = spec['TeqFw_User_Back_Defaults$'];
         /** @type {TeqFw_Db_Back_RDb_Schema_EntityBase} */
         const base = spec['TeqFw_Db_Back_RDb_Schema_EntityBase$'];
 

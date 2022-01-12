@@ -3,6 +3,7 @@
  * @namespace TestEnv
  */
 import {dirname, join} from 'path';
+import {existsSync} from 'fs';
 import Container from '@teqfw/di';
 
 /**
@@ -46,7 +47,9 @@ const cfg = (function () {
 const container = (function (cfg) {
     /** @type {TeqFw_Di_Shared_Container} */
     const res = new Container();
-    const pathNode = join(cfg.path.root, 'node_modules');
+    const pathNodeInt = join(cfg.path.root, 'node_modules');
+    const pathNodeExt = join(cfg.path.root, '../../../node_modules');
+    const pathNode = existsSync(pathNodeInt) ? pathNodeInt : pathNodeExt;
     const srcTeqFwDi = join(pathNode, '@teqfw/di/src');
     const srcTeqFwCore = join(pathNode, '@teqfw/core/src');
     const srcTeqFwDb = join(pathNode, '@teqfw/db/src');

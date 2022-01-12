@@ -5,6 +5,8 @@ export default class TeqFw_User_Back_Defaults {
 
     CLI_PREFIX = 'user'; // prefix in CLI commands
 
+    FILE_CRYPTO_KEYS = './cfg/local.crypto.keys.json';
+
     /** @type {TeqFw_User_Shared_Defaults} */
     SHARED;
 
