@@ -13,6 +13,10 @@
       "path": "./src"
     },
     "replace": {
+      "TeqFw_User_Shared_Api_Crypto_IScrambler": {
+        "back": "TeqFw_User_Back_Mod_Crypto_Scrambler",
+        "front": "TeqFw_User_Front_Mod_Crypto_Scrambler"
+      },
       "TeqFw_User_Shared_Api_Crypto_Key_IManager": {
         "back": "TeqFw_User_Back_Mod_Crypto_Key_Manager",
         "front": "TeqFw_User_Front_Mod_Crypto_Key_Manager"

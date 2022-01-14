@@ -29,8 +29,10 @@ export default class TeqFw_User_Front_Proc_Authenticate {
         const esfConfirm = spec['TeqFw_User_Shared_Event_Front_Authenticate_Confirm$'];
         /** @type {TeqFw_User_Front_DSource_Server_Key} */
         const dsServerKey = spec['TeqFw_User_Front_DSource_Server_Key$'];
-        /** @type {TeqFw_User_Front_DSource_User_Keys} */
-        const dsKeys = spec['TeqFw_User_Front_DSource_User_Keys$'];
+        /** @type {TeqFw_User_Front_DSource_User} */
+        const dsUser = spec['TeqFw_User_Front_DSource_User$'];
+        /** @type {TeqFw_User_Shared_Api_Crypto_IScrambler} */
+        const scrambler = spec['TeqFw_User_Shared_Api_Crypto_IScrambler$'];
 
         // ENCLOSED VARS
 
@@ -44,9 +46,15 @@ export default class TeqFw_User_Front_Proc_Authenticate {
          * @param {TeqFw_Web_Shared_App_Event_Trans_Message_Meta.Dto} meta
          */
         async function onAuthenticate({data, meta}) {
-            const keyServerPublic = await dsServerKey.get();
-            // user cannot be authenticated
             const message = esfConfirm.createDto();
+            const user = await dsUser.get();
+            if (user?.id) {
+                // encrypt and sign payload from server
+                const keyServerPublic = await dsServerKey.get();
+                scrambler.setKeys(keyServerPublic, user.keys.secret);
+                message.data.encryptedText = scrambler.encryptAndSign(data.plainText);
+                message.data.userId = user.id;
+            } // else: just send empty response
             portalBack.publish(message);
         }
 

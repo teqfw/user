@@ -58,7 +58,7 @@ export default class TeqFw_User_Front_DSource_Server_Key {
             // MAIN
             if (!_cache) {
                 _cache = await store.get(STORE_KEY);
-                if (_cache) {
+                if (!_cache) {
                     _cache = await loadServerKey();
                     await store.set(STORE_KEY, _cache);
                 }
