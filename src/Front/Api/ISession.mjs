@@ -1,5 +1,6 @@
 /**
  * @interface
+ * @deprecated use TeqFw_User_Front_DSource_User
  */
 export default class TeqFw_User_Front_Api_ISession {
     /**

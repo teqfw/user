@@ -18,6 +18,11 @@ export default class TeqFw_User_Front_DSource_User {
         let _cache;
 
         // INSTANCE METHODS
+        this.clean = async () => {
+            _cache = undefined;
+            await store.delete(STORE_KEY);
+        }
+
         /**
          * Get user data from IDB or generate new one and sae to IDB.
          * @return {Promise<TeqFw_User_Shared_Dto_User.Dto>}

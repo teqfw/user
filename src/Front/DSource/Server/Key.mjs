@@ -27,6 +27,11 @@ export default class TeqFw_User_Front_DSource_Server_Key {
         let _cache;
 
         // INSTANCE METHODS
+        this.clean = async () => {
+            _cache = undefined;
+            await store.delete(STORE_KEY);
+        }
+
         this.get = async () => {
             // ENCLOSED FUNCTIONS
             function loadServerKey() {
