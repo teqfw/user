@@ -113,7 +113,9 @@ export default class TeqFw_User_Back_Proc_Authenticate {
                     await trx.rollback();
                 }
             } else {
-                logger.info(`User for front '${frontUUID}' is not authenticated.`);
+                const msg = `User for front '${frontUUID}' is not authenticated (encrypted payload is missed).`;
+                logger.info(msg);
+                await publishFailure(frontUUID, msg);
             }
         }
     }
