@@ -3,12 +3,6 @@
  *
  * @namespace TeqFw_User_Back_Mod_Event_Stream_Registry
  */
-// MODULE'S IMPORT
-
-// MODULE'S VARS
-const NS = 'TeqFw_User_Back_Mod_Event_Stream_Registry';
-
-// MODULE'S CLASSES
 export default class TeqFw_User_Back_Mod_Event_Stream_Registry {
     constructor(spec) {
         // EXTRACT DEPS
@@ -55,7 +49,7 @@ export default class TeqFw_User_Back_Mod_Event_Stream_Registry {
          * @return {string[]}
          */
         this.getStreams = function (userId) {
-            return _store[userId];
+            return _store[userId] || [];
         }
     }
 }
