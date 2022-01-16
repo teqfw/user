@@ -11,7 +11,7 @@ const NS = 'TeqFw_User_Shared_Event_Back_Authentication_Failure';
  * @memberOf TeqFw_User_Shared_Event_Back_Authentication_Failure
  */
 class Dto {
-    static namespace = `${NS}.Dto`;
+    static namespace = NS;
     /** @type {string} */
     reason;
 }

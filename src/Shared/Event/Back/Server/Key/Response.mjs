@@ -9,7 +9,7 @@ const NS = 'TeqFw_User_Shared_Event_Back_Server_Key_Response';
  * @memberOf TeqFw_User_Shared_Event_Back_Server_Key_Response
  */
 class Dto {
-    static namespace = `${NS}.Dto`;
+    static namespace = NS;
     /**
      * Server public key.
      * @type {string}

@@ -25,7 +25,7 @@ const ATTR = {
  * @memberOf TeqFw_User_Back_Store_RDb_Schema_User
  */
 class Dto {
-    static namespace = `${NS}.Dto`;
+    static namespace = NS;
     /** @type {Date} */
     date_created;
     /** @type {number} */

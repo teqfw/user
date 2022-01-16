@@ -9,7 +9,7 @@ const NS = 'TeqFw_User_Shared_Event_Front_User_Key_New';
  * @memberOf TeqFw_User_Shared_Event_Front_User_Key_New
  */
 class Dto {
-    static namespace = `${NS}.Dto`;
+    static namespace = NS;
     /**
      * Base64 encoded key.
      * @type {string}

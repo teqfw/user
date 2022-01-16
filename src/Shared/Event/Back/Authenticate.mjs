@@ -9,7 +9,7 @@ const NS = 'TeqFw_User_Shared_Event_Back_Authenticate';
  * @memberOf TeqFw_User_Shared_Event_Back_Authenticate
  */
 class Dto {
-    static namespace = `${NS}.Dto`;
+    static namespace = NS;
     /**
      * String to encrypt on the client side.
      * @type {string}

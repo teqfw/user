@@ -9,7 +9,7 @@ const NS = 'TeqFw_User_Shared_Event_Front_Server_Key_Request';
  * @memberOf TeqFw_User_Shared_Event_Front_Server_Key_Request
  */
 class Dto {
-    static namespace = `${NS}.Dto`;
+    static namespace = NS;
 }
 
 /**
