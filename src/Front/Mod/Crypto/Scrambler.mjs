@@ -2,14 +2,6 @@
  * Frontend implementation for scrambler (encrypt/decrypt object for strings).
  *
  * @namespace TeqFw_User_Front_Mod_Crypto_Scrambler
- */
-// MODULE'S IMPORT
-
-// MODULE'S VARS
-const NS = 'TeqFw_User_Front_Mod_Crypto_Scrambler';
-
-// MODULE'S CLASSES
-/**
  * @implements TeqFw_User_Shared_Api_Crypto_IScrambler
  */
 export default class TeqFw_User_Front_Mod_Crypto_Scrambler {
@@ -25,6 +17,8 @@ export default class TeqFw_User_Front_Mod_Crypto_Scrambler {
         const encodeBase64 = spec['TeqFw_User_Front_Lib_Nacl_Util.encodeBase64'];
         /** @type {TeqFw_User_Front_Lib_Nacl_Util.decodeUTF8|function} */
         const decodeUTF8 = spec['TeqFw_User_Front_Lib_Nacl_Util.decodeUTF8'];
+        /** @type {TeqFw_User_Front_Lib_Nacl_Util.encodeUTF8|function} */
+        const encodeUTF8 = spec['TeqFw_User_Front_Lib_Nacl_Util.encodeUTF8'];
 
         // ENCLOSED VARS
         let _keyShared;
@@ -34,7 +28,21 @@ export default class TeqFw_User_Front_Mod_Crypto_Scrambler {
         // ENCLOSED FUNCTIONS
 
         // INSTANCE METHODS
-        this.decryptAndVerify = function (encrypted) {}
+        this.decryptAndVerify = function (encrypted) {
+            let res = null;
+            const messageWithNonceAsUint8Array = decodeBase64(encrypted);
+            const nonce = messageWithNonceAsUint8Array.slice(0, box.nonceLength);
+            const message = messageWithNonceAsUint8Array.slice(
+                box.nonceLength,
+                encrypted.length
+            );
+            const decryptedAb = box.open.after(message, nonce, _keyShared);
+            if (decryptedAb) {
+                const jsonStr = encodeUTF8(decryptedAb);
+                res = JSON.parse(jsonStr);
+            }
+            return res;
+        }
 
         this.encryptAndSign = function (plain) {
             const messageUint8 = decodeUTF8(JSON.stringify(plain));
@@ -53,7 +61,3 @@ export default class TeqFw_User_Front_Mod_Crypto_Scrambler {
         }
     }
 }
-
-// MODULE'S FUNCTIONS
-
-// MODULE'S MAIN
