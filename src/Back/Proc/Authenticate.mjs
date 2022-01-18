@@ -8,10 +8,10 @@ export default class TeqFw_User_Back_Proc_Authenticate {
         // EXTRACT DEPS
         /** @type {TeqFw_Core_Shared_Logger} */
         const logger = spec['TeqFw_Core_Shared_Logger$'];
-        /** @type {TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Portal} */
-        const portalFront = spec['TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Portal$'];
         /** @type {TeqFw_Core_Back_App_Event_Bus} */
         const eventsBack = spec['TeqFw_Core_Back_App_Event_Bus$'];
+        /** @type {TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Portal} */
+        const portalFront = spec['TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Portal$'];
         /** @type {TeqFw_Web_Back_Event_Stream_Reverse_Opened} */
         const ebReverseOpened = spec['TeqFw_Web_Back_Event_Stream_Reverse_Opened$'];
         /** @type {TeqFw_User_Shared_Event_Back_Authenticate} */
@@ -20,6 +20,8 @@ export default class TeqFw_User_Back_Proc_Authenticate {
         const esbFailure = spec['TeqFw_User_Shared_Event_Back_Authentication_Failure$'];
         /** @type {TeqFw_User_Shared_Event_Front_Authenticate_Confirm} */
         const esfAuthConfirm = spec['TeqFw_User_Shared_Event_Front_Authenticate_Confirm$'];
+        /** @type {TeqFw_User_Back_Event_Authenticated} */
+        const ebAuthenticated = spec['TeqFw_User_Back_Event_Authenticated$'];
         /** @type {TeqFw_User_Shared_Api_Crypto_IScrambler} */
         const scrambler = spec['TeqFw_User_Shared_Api_Crypto_IScrambler$'];
         /** @type {TeqFw_Db_Back_RDb_IConnect} */
@@ -97,6 +99,9 @@ export default class TeqFw_User_Back_Proc_Authenticate {
                         if (stream) {
                             regUsers.add(userId, streamUUIID);
                             logger.info(`User #${userId} for stream '${streamUUIID}' is authenticated successfully.`);
+                            const eventAuth = ebAuthenticated.createDto();
+                            eventAuth.data.userId = userId;
+                            eventsBack.publish(eventAuth);
                         } else {
                             const msg = `There is no opened stream '${streamUUIID}' for authenticated user #${userId}.`;
                             logger.info(msg);
