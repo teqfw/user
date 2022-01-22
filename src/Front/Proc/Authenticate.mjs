@@ -7,10 +7,10 @@
 export default class TeqFw_User_Front_Proc_Authenticate {
     constructor(spec) {
         // EXTRACT DEPS
-        /** @type {TeqFw_Web_Front_App_Connect_Event_Direct_Portal} */
-        const portalBack = spec['TeqFw_Web_Front_App_Connect_Event_Direct_Portal$'];
         /** @type {TeqFw_Web_Front_App_Event_Bus} */
         const eventsFront = spec['TeqFw_Web_Front_App_Event_Bus$'];
+        /** @type {TeqFw_Web_Front_App_Connect_Event_Direct_Portal} */
+        const portalBack = spec['TeqFw_Web_Front_App_Connect_Event_Direct_Portal$'];
         /** @type {TeqFw_User_Shared_Event_Back_Authenticate} */
         const esbAuth = spec['TeqFw_User_Shared_Event_Back_Authenticate$'];
         /** @type {TeqFw_User_Shared_Event_Back_Authentication_Failure} */

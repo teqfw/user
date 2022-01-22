@@ -38,8 +38,8 @@ export default class TeqFw_User_Back_Proc_Authenticate {
         const regUsers = spec['TeqFw_User_Back_Mod_Event_Stream_Registry$'];
 
         // MAIN
-        eventsBack.subscribe(ebReverseOpened.getEventName(), onReverseOpen)
-        eventsBack.subscribe(esfAuthConfirm.getEventName(), onFrontConfirm)
+        eventsBack.subscribe(ebReverseOpened.getEventName(), onReverseOpen);
+        eventsBack.subscribe(esfAuthConfirm.getEventName(), onFrontConfirm);
 
         // ENCLOSED FUNCTIONS
         /**
