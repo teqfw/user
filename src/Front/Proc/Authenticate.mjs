@@ -7,6 +7,8 @@
 export default class TeqFw_User_Front_Proc_Authenticate {
     constructor(spec) {
         // EXTRACT DEPS
+        /** @type {TeqFw_Web_Front_App_Logger} */
+        const logger = spec['TeqFw_Web_Front_App_Logger$'];
         /** @type {TeqFw_Web_Front_App_Event_Bus} */
         const eventsFront = spec['TeqFw_Web_Front_App_Event_Bus$'];
         /** @type {TeqFw_Web_Front_App_Connect_Event_Direct_Portal} */
@@ -53,7 +55,7 @@ export default class TeqFw_User_Front_Proc_Authenticate {
          * @param {TeqFw_Web_Shared_App_Event_Trans_Message_Meta.Dto} meta
          */
         async function onFailure({data, meta}) {
-            console.log(`Authentication failure: ${data.reason}.`);
+            logger.error(`Authentication failure: ${data.reason}.`);
         }
 
         // INSTANCE METHODS
