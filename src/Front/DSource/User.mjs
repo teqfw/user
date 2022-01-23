@@ -24,7 +24,7 @@ export default class TeqFw_User_Front_DSource_User {
         }
 
         /**
-         * Get user data from IDB or generate new one and sae to IDB.
+         * Get current user data from IDB or generate new one and save to IDB.
          * @return {Promise<TeqFw_User_Shared_Dto_User.Dto>}
          */
         this.get = async () => {
