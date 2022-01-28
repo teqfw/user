@@ -13,6 +13,7 @@ export default function Factory(spec) {
     async function action() {
         // run initialization synchronously to prevent doubling of singletons
         await container.get('TeqFw_User_Back_Proc_Authenticate$');
+        await container.get('TeqFw_User_Back_Proc_Registry_Clean$');
         await container.get('TeqFw_User_Back_Proc_Server_Key_Source$');
     }
 
