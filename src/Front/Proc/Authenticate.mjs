@@ -23,8 +23,8 @@ export default class TeqFw_User_Front_Proc_Authenticate {
         const dsServerKey = spec['TeqFw_User_Front_DSource_Server_Key$'];
         /** @type {TeqFw_User_Front_DSource_User} */
         const dsUser = spec['TeqFw_User_Front_DSource_User$'];
-        /** @type {TeqFw_User_Shared_Api_Crypto_IScrambler} */
-        const scrambler = spec['TeqFw_User_Shared_Api_Crypto_IScrambler$'];
+        /** @type {TeqFw_Web_Shared_Api_Crypto_IScrambler} */
+        const scrambler = spec['TeqFw_Web_Shared_Api_Crypto_IScrambler$'];
 
         // MAIN
         eventsFront.subscribe(esbAuth.getEventName(), onAuthenticate);

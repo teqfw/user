@@ -1,8 +1,5 @@
 {
   "@teqfw/core": {
-    "commands": [
-      "TeqFw_User_Back_Cli_Crypto_Key_Create"
-    ],
     "plugin": {
       "onInit": "TeqFw_User_Back_Plugin_Init"
     }
@@ -11,22 +8,6 @@
     "autoload": {
       "ns": "TeqFw_User",
       "path": "./src"
-    },
-    "replace": {
-      "TeqFw_User_Shared_Api_Crypto_IScrambler": {
-        "back": "TeqFw_User_Back_Mod_Crypto_Scrambler",
-        "front": "TeqFw_User_Front_Mod_Crypto_Scrambler"
-      },
-      "TeqFw_User_Shared_Api_Crypto_Key_IManager": {
-        "back": "TeqFw_User_Back_Mod_Crypto_Key_Manager",
-        "front": "TeqFw_User_Front_Mod_Crypto_Key_Manager"
-      }
-    }
-  },
-  "@teqfw/web": {
-    "statics": {
-      "/tweetnacl-util/": "/tweetnacl-util/",
-      "/tweetnacl/": "/tweetnacl/"
     }
   }
 }

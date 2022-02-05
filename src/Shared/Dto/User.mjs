@@ -24,7 +24,7 @@ class Dto {
     dateCreated;
     /** @type {number} */
     id;
-    /** @type {TeqFw_User_Shared_Dto_AsymKeys.Dto} */
+    /** @type {TeqFw_Web_Shared_Dto_Identity_Keys.Dto} */
     keys;
 }
 
@@ -38,8 +38,8 @@ export default class TeqFw_User_Shared_Dto_User {
         const castDate = spec['TeqFw_Core_Shared_Util_Cast.castDate'];
         /** @type {TeqFw_Core_Shared_Util_Cast.castInt|function} */
         const castInt = spec['TeqFw_Core_Shared_Util_Cast.castInt'];
-        /** @type {TeqFw_User_Shared_Dto_AsymKeys} */
-        const dtoKeys = spec['TeqFw_User_Shared_Dto_AsymKeys$'];
+        /** @type {TeqFw_Web_Shared_Dto_Identity_Keys} */
+        const dtoKeys = spec['TeqFw_Web_Shared_Dto_Identity_Keys$'];
 
         // DEFINE INSTANCE METHODS
         /**

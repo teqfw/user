@@ -10,8 +10,8 @@ export default class TeqFw_User_Front_DSource_User {
         const store = spec['TeqFw_Web_Front_Store$'];
         /** @type {TeqFw_User_Shared_Dto_User} */
         const dtoUser = spec['TeqFw_User_Shared_Dto_User$'];
-        /** @type {TeqFw_User_Shared_Api_Crypto_Key_IManager} */
-        const mgrKeys = spec['TeqFw_User_Shared_Api_Crypto_Key_IManager$'];
+        /** @type {TeqFw_Web_Shared_Api_Crypto_Key_IManager} */
+        const mgrKeys = spec['TeqFw_Web_Shared_Api_Crypto_Key_IManager$'];
 
         // ENCLOSED VARS
         const STORE_KEY = `${DEF.SHARED.NAME}/front/user`;

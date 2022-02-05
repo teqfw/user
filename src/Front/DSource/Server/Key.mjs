@@ -17,10 +17,10 @@ export default class TeqFw_User_Front_DSource_Server_Key {
         const portalBack = spec['TeqFw_Web_Front_App_Connect_Event_Direct_Portal$'];
         /** @type {TeqFw_Web_Front_App_Event_Bus} */
         const eventsFront = spec['TeqFw_Web_Front_App_Event_Bus$'];
-        /** @type {TeqFw_User_Shared_Event_Front_Server_Key_Request} */
-        const esfKeyReq = spec['TeqFw_User_Shared_Event_Front_Server_Key_Request$'];
-        /** @type {TeqFw_User_Shared_Event_Back_Server_Key_Response} */
-        const esbKeyRes = spec['TeqFw_User_Shared_Event_Back_Server_Key_Response$'];
+        /** @type {TeqFw_Web_Shared_Event_Front_Server_Key_Request} */
+        const esfKeyReq = spec['TeqFw_Web_Shared_Event_Front_Server_Key_Request$'];
+        /** @type {TeqFw_Web_Shared_Event_Back_Server_Key_Response} */
+        const esbKeyRes = spec['TeqFw_Web_Shared_Event_Back_Server_Key_Response$'];
 
         // ENCLOSED VARS
         const STORE_KEY = `${DEF.SHARED.NAME}/back/server/key`;
@@ -49,7 +49,7 @@ export default class TeqFw_User_Front_DSource_Server_Key {
                     eventsFront.subscribe(
                         esbKeyRes.getEventName(),
                         /**
-                         * @param {TeqFw_User_Shared_Event_Back_Server_Key_Response.Dto} data
+                         * @param {TeqFw_Web_Shared_Event_Back_Server_Key_Response.Dto} data
                          */
                         ({data}) => {
                             if (intId) clearInterval(intId);

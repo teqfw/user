@@ -22,16 +22,16 @@ export default class TeqFw_User_Back_Proc_Authenticate {
         const esfAuthConfirm = spec['TeqFw_User_Shared_Event_Front_Authenticate_Confirm$'];
         /** @type {TeqFw_User_Back_Event_Authenticated} */
         const ebAuthenticated = spec['TeqFw_User_Back_Event_Authenticated$'];
-        /** @type {TeqFw_User_Shared_Api_Crypto_IScrambler} */
-        const scrambler = spec['TeqFw_User_Shared_Api_Crypto_IScrambler$'];
+        /** @type {TeqFw_Web_Shared_Api_Crypto_IScrambler} */
+        const scrambler = spec['TeqFw_Web_Shared_Api_Crypto_IScrambler$'];
         /** @type {TeqFw_Db_Back_RDb_IConnect} */
         const conn = spec['TeqFw_Db_Back_RDb_IConnect$'];
         /** @type {TeqFw_Db_Back_Api_RDb_ICrudEngine} */
         const crud = spec['TeqFw_Db_Back_Api_RDb_ICrudEngine$'];
         /** @type {TeqFw_User_Back_Store_RDb_Schema_User} */
         const metaUser = spec['TeqFw_User_Back_Store_RDb_Schema_User$'];
-        /** @type {TeqFw_User_Back_DSource_Server_Key} */
-        const dsServerKey = spec['TeqFw_User_Back_DSource_Server_Key$'];
+        /** @type {TeqFw_Web_Back_Mod_Server_Key} */
+        const dsServerKey = spec['TeqFw_Web_Back_Mod_Server_Key$'];
         /** @type {TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Registry} */
         const regStreams = spec['TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Registry$'];
         /** @type {TeqFw_User_Back_Mod_Event_Stream_Registry} */
