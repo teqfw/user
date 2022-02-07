@@ -32,8 +32,8 @@ export default class TeqFw_User_Back_Proc_Authenticate {
         const metaUser = spec['TeqFw_User_Back_Store_RDb_Schema_User$'];
         /** @type {TeqFw_Web_Back_Mod_Server_Key} */
         const dsServerKey = spec['TeqFw_Web_Back_Mod_Server_Key$'];
-        /** @type {TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Registry} */
-        const regStreams = spec['TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Registry$'];
+        /** @type {TeqFw_Web_Back_Mod_Event_Reverse_Registry} */
+        const regStreams = spec['TeqFw_Web_Back_Mod_Event_Reverse_Registry$'];
         /** @type {TeqFw_User_Back_Mod_Event_Stream_Registry} */
         const regUsers = spec['TeqFw_User_Back_Mod_Event_Stream_Registry$'];
 
