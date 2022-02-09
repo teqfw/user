@@ -12,8 +12,8 @@ export default class TeqFw_User_Back_Proc_Authenticate {
         const eventsBack = spec['TeqFw_Core_Back_App_Event_Bus$'];
         /** @type {TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Portal} */
         const portalFront = spec['TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Portal$'];
-        /** @type {TeqFw_Web_Back_Event_Stream_Reverse_Opened} */
-        const ebReverseOpened = spec['TeqFw_Web_Back_Event_Stream_Reverse_Opened$'];
+        // /** @type {TeqFw_Web_Back_Event_Stream_Reverse_Opened} */
+        // const ebReverseOpened = spec['TeqFw_Web_Back_Event_Stream_Reverse_Opened$'];
         /** @type {TeqFw_User_Shared_Event_Back_Authenticate} */
         const esbAuthenticate = spec['TeqFw_User_Shared_Event_Back_Authenticate$'];
         /** @type {TeqFw_User_Shared_Event_Back_Authentication_Failure} */
@@ -38,7 +38,7 @@ export default class TeqFw_User_Back_Proc_Authenticate {
         const regUsers = spec['TeqFw_User_Back_Mod_Event_Stream_Registry$'];
 
         // MAIN
-        eventsBack.subscribe(ebReverseOpened.getEventName(), onReverseOpen);
+        // eventsBack.subscribe(ebReverseOpened.getEventName(), onReverseOpen);
         eventsBack.subscribe(esfAuthConfirm.getEventName(), onFrontConfirm);
 
         // ENCLOSED FUNCTIONS

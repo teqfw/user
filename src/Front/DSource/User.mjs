@@ -6,8 +6,8 @@ export default class TeqFw_User_Front_DSource_User {
         // EXTRACT DEPS
         /** @type {TeqFw_User_Front_Defaults} */
         const DEF = spec['TeqFw_User_Front_Defaults$'];
-        /** @type {TeqFw_Web_Front_Store} */
-        const store = spec['TeqFw_Web_Front_Store$'];
+        // /** @type {TeqFw_Web_Front_Store} */
+        // const store = spec['TeqFw_Web_Front_Store$'];
         /** @type {TeqFw_User_Shared_Dto_User} */
         const dtoUser = spec['TeqFw_User_Shared_Dto_User$'];
         /** @type {TeqFw_Web_Shared_Api_Crypto_Key_IManager} */

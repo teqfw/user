@@ -13,10 +13,10 @@ export default class TeqFw_User_Back_Proc_Registry_Clean {
         /** @type {TeqFw_User_Back_Mod_Event_Stream_Registry} */
         const regUsers = spec['TeqFw_User_Back_Mod_Event_Stream_Registry$'];
         /** @type {TeqFw_Web_Back_Event_Stream_Reverse_Closed} */
-        const ebClosed = spec['TeqFw_Web_Back_Event_Stream_Reverse_Closed$'];
+        // const ebClosed = spec['TeqFw_Web_Back_Event_Stream_Reverse_Closed$'];
 
         // MAIN
-        eventsBack.subscribe(ebClosed.getEventName(), onReverseClose);
+        // eventsBack.subscribe(ebClosed.getEventName(), onReverseClose);
 
         // ENCLOSED FUNCTIONS
         /**
