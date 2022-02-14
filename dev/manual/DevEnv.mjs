@@ -29,8 +29,8 @@ container.addSourceMapping('TeqFw_User', srcTeqFwUser, true, 'mjs');
 container.addModuleReplacement('TeqFw_Db_Back_Api_RDb_ISchema', 'TeqFw_Db_Back_RDb_Schema');
 
 // init logger
-/** @type {TeqFw_Core_Shared_Logger} */
-const logger = await container.get('TeqFw_Core_Shared_Logger$');
+/** @type {TeqFw_Core_Shared_Api_ILogger} */
+const logger = await container.get('TeqFw_Core_Shared_Api_ILogger$');
 logger.pause(false);
 
 // load local config
