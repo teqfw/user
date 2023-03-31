@@ -6,10 +6,10 @@
 export default class TeqFw_User_Back_Proc_Registry_Clean {
     constructor(spec) {
         // EXTRACT DEPS
-        /** @type {TeqFw_Core_Shared_Api_ILogger} */
-        const logger = spec['TeqFw_Core_Shared_Api_ILogger$'];
-        /** @type {TeqFw_Core_Back_App_Event_Bus} */
-        const eventsBack = spec['TeqFw_Core_Back_App_Event_Bus$'];
+        /** @type {TeqFw_Core_Shared_Api_Logger} */
+        const logger = spec['TeqFw_Core_Shared_Api_Logger$'];
+        /** @type {TeqFw_Web_Event_Back_Mod_Channel} */
+        const eventsBack = spec['TeqFw_Web_Event_Back_Mod_Channel$'];
         /** @type {TeqFw_User_Back_Mod_Event_Stream_Registry} */
         const regUsers = spec['TeqFw_User_Back_Mod_Event_Stream_Registry$'];
         /** @type {TeqFw_Web_Back_Event_Stream_Reverse_Closed} */

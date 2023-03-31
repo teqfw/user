@@ -6,12 +6,12 @@
 export default class TeqFw_User_Back_Proc_Authenticate {
     constructor(spec) {
         // EXTRACT DEPS
-        /** @type {TeqFw_Core_Shared_Api_ILogger} */
-        const logger = spec['TeqFw_Core_Shared_Api_ILogger$'];
-        /** @type {TeqFw_Core_Back_App_Event_Bus} */
-        const eventsBack = spec['TeqFw_Core_Back_App_Event_Bus$'];
-        /** @type {TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Portal} */
-        const portalFront = spec['TeqFw_Web_Back_App_Server_Handler_Event_Reverse_Portal$'];
+        /** @type {TeqFw_Core_Shared_Api_Logger} */
+        const logger = spec['TeqFw_Core_Shared_Api_Logger$'];
+        /** @type {TeqFw_Web_Event_Back_Mod_Channel} */
+        const eventsBack = spec['TeqFw_Web_Event_Back_Mod_Channel$'];
+        /** @type {TeqFw_Web_Event_Back_Mod_Portal_Front} */
+        const portalFront = spec['TeqFw_Web_Event_Back_Mod_Portal_Front$'];
         // /** @type {TeqFw_Web_Back_Event_Stream_Reverse_Opened} */
         // const ebReverseOpened = spec['TeqFw_Web_Back_Event_Stream_Reverse_Opened$'];
         /** @type {TeqFw_User_Shared_Event_Back_Authenticate} */
@@ -26,8 +26,8 @@ export default class TeqFw_User_Back_Proc_Authenticate {
         const scrambler = spec['TeqFw_Web_Shared_Api_Crypto_IScrambler$'];
         /** @type {TeqFw_Db_Back_RDb_IConnect} */
         const conn = spec['TeqFw_Db_Back_RDb_IConnect$'];
-        /** @type {TeqFw_Db_Back_Api_RDb_ICrudEngine} */
-        const crud = spec['TeqFw_Db_Back_Api_RDb_ICrudEngine$'];
+        /** @type {TeqFw_Db_Back_Api_RDb_CrudEngine} */
+        const crud = spec['TeqFw_Db_Back_Api_RDb_CrudEngine$'];
         /** @type {TeqFw_User_Back_Store_RDb_Schema_User} */
         const metaUser = spec['TeqFw_User_Back_Store_RDb_Schema_User$'];
         /** @type {TeqFw_Web_Back_Mod_Server_Key} */

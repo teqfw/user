@@ -9,8 +9,8 @@ const NS = 'TeqFw_User_Back_Act_User_Create';
 // MODULE'S FUNCTIONS
 export default function (spec) {
     // EXTRACT DEPS
-    /** @type {TeqFw_Db_Back_Api_RDb_ICrudEngine} */
-    const crud = spec['TeqFw_Db_Back_Api_RDb_ICrudEngine$'];
+    /** @type {TeqFw_Db_Back_Api_RDb_CrudEngine} */
+    const crud = spec['TeqFw_Db_Back_Api_RDb_CrudEngine$'];
     /** @type {TeqFw_User_Back_Store_RDb_Schema_User} */
     const meta = spec['TeqFw_User_Back_Store_RDb_Schema_User$'];
 
